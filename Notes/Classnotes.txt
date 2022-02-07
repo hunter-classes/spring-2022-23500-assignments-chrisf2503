@@ -12,6 +12,9 @@ then we can solve a problem where it would then have a solution.
 
 Recurssion would come into play because we would be using our stack, so if we hit a dead end,
 then we could then back track so we can move into a new direction
+
+When dealing with recursion, we want to get all of our base case first.
+
 Simple situation: 
 １．if we start at the finish line, we solve it, 
 2. If we hit a wall we would then back track, return to the privous level
