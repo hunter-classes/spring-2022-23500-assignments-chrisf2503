@@ -1,0 +1,27 @@
+lets say ww have a problem where we want to get out of a maze,
+There are a few ways to solve a maze, one is keeping your hand on the fall
+This will basically allow you to feel the layout of the maze.
+Another one is to basically leaving a trial, so you can basicslly back track.
+
+State space-
+
+IF we are able to discribe a problem into a world where they would have different state,
+then we can solve a problem where it would then have a solution. 
+-our state would be a 2d array of char,
+-transition would then modify the array
+
+Recurssion would come into play because we would be using our stack, so if we hit a dead end,
+then we could then back track so we can move into a new direction
+Simple situation: 
+１．if we start at the finish line, we solve it, 
+2. If we hit a wall we would then back track, return to the privous level
+3. other wise, we can try to go into solve the other possiblilty. 
+
+void solveMaze(char maze[][], int x, int y){
+    if(maze[x][y] == 'E'){
+        return "solved";
+    }
+    if(maze[x][y] == 'W'){
+        return (something);
+    }
+}
