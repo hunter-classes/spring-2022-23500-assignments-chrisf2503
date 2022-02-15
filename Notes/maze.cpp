@@ -23,10 +23,7 @@ void print_maze(std::string maze[],int lines){
 }
 
 void solve(std::string maze[], int lines, int row, int col){
-  if(maze[row][col] == wall){
-    return;
-  }
-  else if(maze[row][col] == me){
+  if(maze[row][col] == wall || maze[row][col] == me){
     return;
   }
   else if(maze[row][col] == goal){
@@ -36,10 +33,10 @@ void solve(std::string maze[], int lines, int row, int col){
   //record where you are when moving the maze
   maze[row][col] = me;
   print_maze(maze, lines);
-  solve(maze, lines, row, col+1);
-  solve(maze, lines, row, col-1);
-  solve(maze, lines, row+1, col);
+  solve(maze, lines, row, col-1); 
   solve(maze, lines, row-1, col);
+  solve(maze, lines, row, col+1);
+  solve(maze, lines, row+1, col);
 }
 
 int main()

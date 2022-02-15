@@ -1,4 +1,5 @@
-lets say ww have a problem where we want to get out of a maze,
+date: 02/07/2022
+lets say we have a problem where we want to get out of a maze,
 There are a few ways to solve a maze, one is keeping your hand on the fall
 This will basically allow you to feel the layout of the maze.
 Another one is to basically leaving a trial, so you can basicslly back track.
@@ -27,4 +28,16 @@ void solveMaze(char maze[][], int x, int y){
     if(maze[x][y] == 'W'){
         return (something);
     }
+    solveMaze();
+    ...
+    ...
+    ...
+
 }
+Notes: 02/10/2022
+
+Sometimes it is easir to change the data then the program.
+such as trying to reduce the edge cases
+
+Notes 02/14/2022
+
