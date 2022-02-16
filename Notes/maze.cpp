@@ -35,7 +35,7 @@ void solve(std::string maze[], int lines, int row, int col){
   print_maze(maze, lines);
   solve(maze, lines, row, col-1); 
   solve(maze, lines, row-1, col);
-  solve(maze, lines, row, col+1);
+  solve(maze, lines, row, c ol+1);
   solve(maze, lines, row+1, col);
 }
 
