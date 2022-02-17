@@ -1,5 +1,8 @@
 #include <iostream>
 #include "Nqueen.h"
+#include <fstream>
+#include <string>
+#include <unistd.h>
 
 Game::Game(int rSize, int cSize){
     board = new char*[rSize];
@@ -16,6 +19,7 @@ Game::Game(int rSize, int cSize){
 }
 
 void Game::display(){
+    std::cout << "[0;0H\n";
     for(int i = 0; i < sizeRow; i++){
         for(int j = 0; j < sizeCol; j++){
             std::cout << board[i][j] << " ";
@@ -47,6 +51,7 @@ void Game::solve(int row, int col){
         }
     }
     board[row][col] = queen;
+    usleep(80000);
     display();
     std::cout << '\n';
     for(int i = 0; i < sizeRow; i++){
