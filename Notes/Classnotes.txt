@@ -39,5 +39,25 @@ Notes: 02/10/2022
 Sometimes it is easir to change the data then the program.
 such as trying to reduce the edge cases
 
-Notes 02/14/2022
+Notes 02/17/2022 (dinamic data structor)
+review on pointers:
+
+example: 
+int *p1, *p2;
+a = 10;
+pointer is a reference, you are able to access them in different ways.
+`What we want to do is, which to point into memory 
+It is all litaral, &gives of the address of the varible
+p1 = &a; 
+-this is saying that p1 will be pointing at a, therefore it will have the same 
+address but also any changes you mkae to p1 it will change a as well
+Given some type of array of ar[]
+with pointers you can say this
+p1[] == *(p1 + 3) where it knows the size of each box(which is 3)
+but also p1 = &ar[0] this will be pointing to ar index 0
+The concept of an array within c and c++, it is just a blub a memory
+p1 = new int;
+When saying new int, the new operator will have a blub of mem, it will grab the biggest amount of memory
+which it can hold the variable.
+
 
