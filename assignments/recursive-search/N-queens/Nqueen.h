@@ -8,9 +8,7 @@ class Game{
 
     private: 
     char** board;
-    bool filled = false;
     char queen = 'Q';
-    char free = '.';
     int sizeRow = 0;
     int sizeCol = 0;
 };
