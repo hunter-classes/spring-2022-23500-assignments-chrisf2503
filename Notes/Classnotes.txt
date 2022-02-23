@@ -61,3 +61,86 @@ When saying new int, the new operator will have a blub of mem, it will grab the 
 which it can hold the variable.
 
 
+02/21/2022
+Topic: dynamic data structor
+There will be times where their will situation where something such as an array list would be,
+but their will be times it will work but it wouldnt be efficent depending on the senario and context.
+We going to have a class called Node , it will look something like this
+
+This class is called a link list:
+class Node{
+    public:
+    //This could be any data type
+    std::string data;
+    //This will be a pointer for the next Node
+    Node *next;
+    private:
+    //Basic constructors
+    Node();
+    Node(std::string data);
+    Node(std::string data, Node* next)
+
+    //Basic setter method
+    void setData();
+    void setNext();
+
+    //Basic accessor method
+    std::string getData();
+    Node *getNext();
+}
+
+Note within your cpp class when doing your constructors is by doing the following
+Node::Node(std::string data){
+    //this is saying this data variable in the class make it = to the data from the parameter
+    this->data = data;
+    //or to make it simple you can just do 
+    data = d;
+    //You can only do this only when the class variable and the parameter varibale is name different
+
+}
+
+Lets say that we want to make this class now in main, we do the following
+//This is within our main method
+Node *p1 = new Node();
+p1->setData("something");
+
+Node *p2 = new Node("world");
+
+All this is doing at the moment is we are creating p1(a node pointer), it has some address 
+it has a data but its not pointing to any other node at the moment.
+
+p1
+adressOfP1      data      address of the next Node
+[100] ----> ["something"][null pointer]
+
+Now with p2, we creating a Node pointer were we set the data to "world" and it has some address
+
+p2
+adressOfp2     data    address of the next Node
+[120] ----> ["world"][null pointer]
+
+but now if we add this to main
+p1->setNext(p2);
+
+What we are really doing is we are setting the address of p2 in p1 and so we now going to get this
+
+adressOfP1      dataOfp1    adressOfp2    dataOfp2  Currently not pointing to any Node
+[100] -------> ["something"][120] ------> ["world"][null pointer]
+
+Their is an another thing we can do
+//in main.cpp
+
+//We are setting walker to p1
+Node *walker = p1;
+std::cout << walker->getData() << '\n';
+//This will print out "something" because that is the data for adressOfP1
+//Then we can also do this
+walker = p1.getNext();
+std::cout << walker->getData() << '\n';
+//This will print out "world" beause that the data for the next Node from p1
+//We can also do this within a loop by saying the following
+while(walker != nullpointer){
+
+}
+
+

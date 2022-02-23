@@ -5,10 +5,10 @@
 #include <unistd.h>
 
 int main(){
-    Game g(4,4);
+    Game g(50,50);
     std::cout << "[2J;\n";
     g.display();
-    g.solve(0,3);
+    g.solve(29,24);
     g.display();
     return 0;
 }
