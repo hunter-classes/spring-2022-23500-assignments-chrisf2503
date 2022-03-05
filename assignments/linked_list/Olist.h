@@ -16,11 +16,11 @@ class Olist{
     //If it has that value (true) or not (false)
     bool contain(int val);
     //Getting a val at that certain location
-    /*std::string get(int loc);
+    std::string get(int loc);
     //removing a Node at a specific location
     void remove(int loc);
     //reverse the order of a node*/
-    //void reverse();
+    void reverse();
     /*Example:
     [Nodes][110] ---> [of][120] ---> [List][nullptr]
     //                   //This is the address of the first node

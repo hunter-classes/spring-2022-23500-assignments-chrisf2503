@@ -20,13 +20,23 @@ void Olist::insert(int val){
     Node *walker = head;
     Node *newNode = new Node(val);
     Node *track = nullptr;
-    if(head == nullptr){
+    if(head == nullptr || val < walker->getData()){
         newNode->setNext(head);
         head = newNode;
     }
-    while(walker != nullptr){
-        //Draw it out and then plan it we need a few condition
-
+    while(walker!=nullptr){
+        track = walker;
+        walker = walker->getNext();
+        if(val > track->getData() && walker != nullptr){
+            if(val < walker->getData()){
+                newNode->setNext(walker);
+                track->setNext(newNode);
+            }
+        }
+        else if(val > track->getData() && walker == nullptr){
+            newNode->setNext(walker);
+            track->setNext(newNode);
+        }
     }
 }
 
@@ -34,7 +44,7 @@ std::string Olist::toString(){
     std::string output = "";
     Node *walker = head;
     while(walker != nullptr){
-        output += walker->getData() + " ---> ";
+        output += std::to_string(walker->getData()) + " ---> ";
         walker = walker->getNext();
     }
     output += "nullptr";
@@ -53,11 +63,47 @@ bool Olist::contain(int val){
     return false;
 }
 
-/*void Olist::reverse(){
+std::string Olist::get(int loc){
+    Node *walker = head;
+    while(walker && loc > 0){
+        walker = walker->getNext();
+        loc--;
+    }
+    if(walker){
+        return std::to_string(walker->getData());
+    }
+    else{
+        throw std::out_of_range("out of bound");
+    }
+}
+
+void Olist::remove(int loc){
+    Node *walker = head;
+    Node *track = nullptr;
+    while(walker != nullptr && loc > 0){
+        track = walker;
+        walker = walker->getNext();
+        loc--;
+    }
+    if(walker == nullptr){
+        throw std::out_of_range("out of range");
+    }
+    if(track == nullptr){
+        head = walker->getNext();
+    }
+    else{
+        track->setNext(walker->getNext());
+        delete walker;
+    }
+}
+
+void Olist::reverse(){
     Node *walker = head;
     head = nullptr;
     while(walker != nullptr){
-        insert(walker->getData());
+        Node *replace = new Node(walker->getData());
+        replace->setNext(head);
+        head = replace;
         walker = walker->getNext();
     }
-}*/ 
+}//*/ 

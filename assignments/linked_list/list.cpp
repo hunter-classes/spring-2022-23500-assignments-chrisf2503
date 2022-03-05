@@ -15,7 +15,7 @@ List::~List(){
     }
 }
 void List::insert(int data){
-    //Fist creat the new node
+    //Fist create the new node
     Node *newNode = new Node(data);
 
     //trying to reconnnect to the other nodes
