@@ -63,14 +63,14 @@ bool Olist::contain(int val){
     return false;
 }
 
-std::string Olist::get(int loc){
+int Olist::get(int loc){
     Node *walker = head;
     while(walker && loc > 0){
         walker = walker->getNext();
         loc--;
     }
     if(walker){
-        return std::to_string(walker->getData());
+        return walker->getData();
     }
     else{
         throw std::out_of_range("out of bound");

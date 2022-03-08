@@ -143,4 +143,16 @@ while(walker != nullpointer){
 
 }
 
+March 2, 2022
+Sorting and runtime:
+3 fondimetal of Sorting
+Bubble sorting:
+
+Insertion sort: 
+When having a big data set and you want to insert one item,
+then you would insert it to its proper space.
+Selection sort:
+When having a list, you find the smallest it val and 
+place it in the start of the list and then youll keep on doing it 
+until you reach the end
 
