@@ -10,7 +10,7 @@ int largest(std::vector<int> v);
 int mode(std::vector<int> v);
 void printVec(std::vector<int> v);
 int main(){
-    int size = 1000; // default vector size
+    int size = 30000; // default vector size
     //int size = 10000; // default vector size
     int max_val = 100; // default max value for entries
     srand(time(NULL));
@@ -19,7 +19,7 @@ int main(){
     for(i=0;i<size;i++){
         a[i] = rand()%max_val;    
     }
-    //printVec(a);
+    printVec(a);
     std::cout << mode(a) << '\n';
     return 0;
 }
@@ -59,7 +59,7 @@ int mode(std::vector<int> v){
         else if(i == v.size() - 1){
             i = -1;
             if(bigCount <= currentCount){
-                bigCount = currentCount;
+                bigCount = num;
                 currentCount = 0;
             }
             next++;
