@@ -69,7 +69,7 @@ std::vector<int> qsort(std::vector<int> list){
   std::vector<int> lower,higher;
 
   // copy all the values < pivot value to lower
-    for(int i = 1; i < list.size();; i++){
+    for(int i = 1; i < list.size(); i++){
         if(list[i] < list[0]){
             lower.push_back(list[i]);
         }
@@ -85,7 +85,7 @@ std::vector<int> qsort(std::vector<int> list){
     for(int i = 0; i < lower.size(); i++){
         list[i] = lower[i];
     }
-    int j=lower.size();
+    int j = lower.size();
     for(int i = 0; i < higher.size(); i++){ 
         list[j] = higher[0];
         j++;
