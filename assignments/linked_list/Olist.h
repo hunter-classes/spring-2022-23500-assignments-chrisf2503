@@ -21,10 +21,4 @@ class Olist{
     void remove(int loc);
     //reverse the order of a node*/
     void reverse();
-    /*Example:
-    [Nodes][110] ---> [of][120] ---> [List][nullptr]
-    //                   //This is the address of the first node
-    [List][110] ---> [of][100] ---> [Nodes][nullptr]
-    */
-    
 };

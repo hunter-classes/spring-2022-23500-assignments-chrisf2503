@@ -34,5 +34,8 @@ int main(){
     std::cout << l->toString() << '\n';
     l->reverse();
     std::cout << l->toString() << '\n';
+    std::cout << "Decontrustor: \n";
+    l->~Olist();
+    std::cout << l->toString() << '\n';
     return 0;
 }
