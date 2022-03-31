@@ -12,7 +12,7 @@
 const std::string kYourName = "Christopher Flores";
 
 /* Change these constants to contain the paths out of your magzes. */
-const std::string kPathOutOfNormalMaze = "SEESNNESSNNWSWWSESEEW";
+const std::string kPathOutOfNormalMaze = "SEESNNESSNNWSWWSESEE";
 const std::string kPathOutOfTwistyMaze = "ESWEESWENE";
 
 int main() {
