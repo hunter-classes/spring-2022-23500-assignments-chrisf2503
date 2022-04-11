@@ -15,5 +15,19 @@ int main(){
     int del = s->pop();
     s->printStack();
     std::cout << "new top is " << s->top() << '\n';
+    
+    while(!s->empty()){
+        del = s->pop();
+        std::cout << "Val deleted: " << del << "\n";
+        if(!s->empty()){
+            std::cout << "new top is: " << s->top() << '\n';
+        }
+        else{
+            std::cout << "Stack is currently empty\n"; 
+        }
+    }
+    s->printStack();
+    //The next pop will give us an out of range error 
+    //del = s->pop();
     return 0;
 }

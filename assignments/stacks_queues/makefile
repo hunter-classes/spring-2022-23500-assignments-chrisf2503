@@ -7,7 +7,7 @@ stack.o: stack.cpp stack.h list.h
 
 Node.o: Node.cpp Node.h
 
-list.o: list.cpp list.h
+list.o: list.cpp list.h Node.h
 
 clean:
 	rm -f *o
