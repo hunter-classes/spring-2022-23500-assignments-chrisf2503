@@ -5,16 +5,37 @@
 stack::stack(){
     head = new List();
     size = 0;
+    limitOfStack = 5;
 }
 void stack::push(int val){
-    head->insert(val);
-    size++;
+    try{
+        if(size != limitOfStack){
+            head->insert(val);
+            size++;
+        }
+        else{
+            throw std::out_of_range("full");
+        }
+    }catch(...){
+        std::cout << "The stack is full" << '\n'; 
+    }
 }
 int stack::pop(){
-    int val = head->get(0);
-    head->remove(0);
-    size--;
-    return val;
+    try{
+        if(size != 0){
+            int val = head->get(0);
+            head->remove(0);
+            size--;
+            return val;
+        }
+        else{
+            throw std::out_of_range("Empty");
+            
+        }
+    }catch(...){
+        std::cout << "Stack is already empty";
+    }
+    return 0;
 }
 int stack::top(){
     return head->get(0);

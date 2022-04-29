@@ -2,6 +2,7 @@
 #include "stack.h"
 
 int main(){
+    std::cout << "Stack Testing:";
     stack* s = new stack();
     if(s->empty()){
         std::cout << "The stack is currently empty\n";
@@ -10,6 +11,8 @@ int main(){
     s->push(2);
     s->push(3);
     s->push(4);
+    s->push(5);
+    s->push(6);//This will catch a out of Range error because the stack is full
     s->printStack();
     std::cout << "The current val of the top is: " << s->top() << '\n';
     int del = s->pop();
@@ -27,7 +30,8 @@ int main(){
         }
     }
     s->printStack();
-    //The next pop will give us an out of range error 
-    //del = s->pop();
+    /*The next pop will give us an out of range error*/
+    s->pop();
+    
     return 0;
 }
