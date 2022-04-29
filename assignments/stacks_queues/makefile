@@ -1,12 +1,14 @@
-main: main.o Node.o list.o stack.o
-	g++ -o main main.o Node.o list.o stack.o
+main: main.o Node.o list.o stack.o Queues.o
+	g++ -o main main.o Node.o list.o stack.o Queues.o
 
-tests: tests.o Node.o list.o stack.o
-	g++ -o tests tests.o Node.o list.o stack.o
+tests: tests.o Node.o list.o stack.o Queues.o
+	g++ -o tests tests.o Node.o list.o stack.o Queues.o
 
-main.o: main.cpp stack.h
+main.o: main.cpp stack.h Queues.h
 
-tests.o: tests.cpp stack.h doctest.h
+tests.o: tests.cpp stack.h doctest.h Queues.h
+
+Queues.o: Queues.cpp Queues.h
 
 stack.o: stack.cpp stack.h list.h
 
