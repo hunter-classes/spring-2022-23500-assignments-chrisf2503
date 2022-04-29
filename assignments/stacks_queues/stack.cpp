@@ -7,6 +7,11 @@ stack::stack(){
     size = 0;
     limitOfStack = 5;
 }
+stack::~stack(){
+    while(!empty()){
+        pop();
+    }
+}
 void stack::push(int val){
     try{
         if(size != limitOfStack){

@@ -7,6 +7,7 @@ class stack{
         int limitOfStack;
     public:
         stack();
+        ~stack();
         void push(int val);//put a limit and use try and catch
         int pop();//put a try or catch
         int top();
