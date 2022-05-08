@@ -135,3 +135,11 @@ int BSTree::rsearch(int value, Node *p){
         return rsearch(value ,p->getRight());
     }
 }
+
+Node* BSTree::findMaxNode(Node* current){
+  Node* tailer = current;
+  while(){
+    
+  }
+  return current;   
+}
