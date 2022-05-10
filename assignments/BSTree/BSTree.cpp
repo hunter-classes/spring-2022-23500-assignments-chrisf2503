@@ -160,7 +160,7 @@ void BSTree::delNode(int val){
     }
   }
   
-  if(walker->getLeft() == nullptr){
+  if(walker->getRight() == nullptr && walker->getLeft() == nullptr){
     /*if(before->getRight() != nullptr){
       before->setRight(nullptr);
     }else{
