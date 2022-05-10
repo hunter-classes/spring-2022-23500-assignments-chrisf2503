@@ -27,6 +27,7 @@ int main(){
     BSTree* tree = new BSTree();
     tree->setup();
     std::cout << tree->get_debug_String() << '\n';
-    std::cout << tree->rsearch(10) << '\n';
+    std::cout << tree->rsearch(20) << '\n';
+    //tree->delNode(20);
     return 0;
 }

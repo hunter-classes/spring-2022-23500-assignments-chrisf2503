@@ -12,6 +12,6 @@ class BSTree{
         void setup();
         int rsearch(int value);
         int rsearch(int value, Node* p);
-        Node* dMaxNode(Node* current);
+        Node* findMaxNode(Node* current);
         void delNode(int val);
-};
+};  

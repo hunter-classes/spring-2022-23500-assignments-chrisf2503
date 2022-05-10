@@ -96,29 +96,24 @@ void BSTree::insert(int value){
   }
 }
 void BSTree::setup(){
-    Node* n = new Node(10);
-    root = n;
-    n = new Node(20);
-    root->setLeft(n);
-    n = new Node(30);
-    root->setRight(n);
-    n = new Node(40);
-    root->getLeft()->setLeft(n);
+  Node *n = new Node(10);
+  root = n;
+  n = new Node(20);
+  root->setRight(n);
+  Node *n2 = new Node(30);
+  n->setRight(n2);
+  n2 = new Node(15);
+  n->setLeft(n2);
+  n2 = new Node(5);
+  root->setLeft(n2);
+  n = new Node(3);
+  n2->setLeft(n);
+  n = new Node(8);
+  n2->setRight(n);
 }
 
-int BSTree::rsearch(int value){
-    int val;
-    Node* walker = root;
-    if(value == walker->getData()){
-        return walker->getData();
-    }
-    else if(value < walker->getData()){
-        val = rsearch(value, walker->getLeft());
-    }
-    else{
-        val = rsearch(value, walker->getRight());
-    }
-    return val;
+int BSTree::rsearch(int value){  
+  return rsearch(value, root);
 }
 
 int BSTree::rsearch(int value, Node *p){
@@ -135,11 +130,68 @@ int BSTree::rsearch(int value, Node *p){
         return rsearch(value ,p->getRight());
     }
 }
-
-Node* BSTree::findMaxNode(Node* current){
-  Node* tailer = current;
-  while(){
-    
+/*Node* BSTree::findMaxNode(Node* current){
+  Node* before;
+  while(current->getRight() != nullptr){
+    before = current;
+    current = current->getRight();
   }
+  before->setRight(nullptr);
   return current;   
+}//*/
+
+void BSTree::delNode(int val){
+  if(root == nullptr){
+    throw 1;
+  }
+  Node* walker = root;
+  Node* before;
+  //Node* after;
+  //Node* bigNode;
+  while(walker != nullptr){
+    if(walker->getData() == val){
+      break;
+    }else if(walker->getData() < val){
+      before = walker;
+      walker = walker->getLeft();
+    }else{
+      before = walker;
+      walker = walker->getRight();
+    }
+  }
+  
+  if(walker->getLeft() == nullptr){
+    /*if(before->getRight() != nullptr){
+      before->setRight(nullptr);
+    }else{
+      before->setLeft(nullptr);
+    }//*/
+  }//*/
+  /*else if(walker->getRight() != nullptr){
+    after = walker->getRight();
+    if(before->getRight() != nullptr){
+      before->setRight(after);
+    }else{
+      before->setLeft(after);
+    }
+  }
+  else if(walker->getLeft() != nullptr){
+    after = walker->getLeft();
+    if(before->getRight() != nullptr){
+      before->setRight(after);
+    }else{
+      before->setLeft(after);
+    }
+  }
+  else{
+    bigNode = findMaxNode(walker);
+    if(before->getRight() != nullptr){
+      before->setRight(bigNode);
+    }else{
+      before->setLeft(bigNode);
+    }
+    bigNode->setLeft(walker->getLeft());
+    bigNode->setRight(walker->getRight());
+  }
+  //delete walker;*/
 }
