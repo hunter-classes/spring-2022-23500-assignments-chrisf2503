@@ -2,7 +2,7 @@
 #include "Node.h"
 
 Node::Node(){
-    data = 0;
+    data;
     right = nullptr;
     left = nullptr;
 }

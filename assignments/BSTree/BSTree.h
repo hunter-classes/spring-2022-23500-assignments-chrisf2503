@@ -4,6 +4,7 @@
 class BSTree{
     private:
         Node* root;
+        int height;
     public:
         BSTree();
         std::string traverse(Node *n);
@@ -12,6 +13,8 @@ class BSTree{
         void setup();
         int rsearch(int value);
         int rsearch(int value, Node* p);
-        Node* findMaxNode(Node* current);
+        Node* findMinNode(Node* current);
         void delNode(int val);
+        //int treeHeight();
+        //int treeHeight(Node *p);
 };  

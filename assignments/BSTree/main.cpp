@@ -28,6 +28,13 @@ int main(){
     tree->setup();
     std::cout << tree->get_debug_String() << '\n';
     std::cout << tree->rsearch(20) << '\n';
-    //tree->delNode(20);
+    //deleting Node that points to one Node
+    tree->delNode(3);
+    //Deleting node that points to nothing
+    tree->delNode(2);
+    //Deleting Nodes that point to 2 things 
+    tree->delNode(5);
+    tree->delNode(20);
+    std::cout << tree->get_debug_String() << '\n';
     return 0;
 }
