@@ -1,7 +1,12 @@
 main: main.o Dictionary.o list.o Node.o Person.o 
 	g++ -o main Dictionary.o list.o main.o Node.o Person.o 
 
-main.o: main.cpp Node.h Person.h 
+tests: tests.o Dictionary.o list.o Node.o Person.o 
+	g++ -o tests tests.o Dictionary.o list.o Node.o Person.o
+
+main.o: main.cpp Dictionary.h list.h Node.h Person.h 
+
+tests.o: tests.cpp doctest.h Dictionary.h list.h Node.h Person.h
 
 Dictionary.o: Dictionary.cpp Dictionary.h list.h Person.o
 
